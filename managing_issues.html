@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Managing Issues &#8212; TaskTide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=a6f6fc7c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=7f41d439"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'managing_issues';</script>
+    <link rel="icon" href="_static/tasktide.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">TaskTide</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/LorenzoMugnai/TaskTide/tree/master" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/LorenzoMugnai/TaskTide/tree/master" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Managing Issues</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="managing-issues">
+<span id="id1"></span><h1>Managing Issues<a class="headerlink" href="#managing-issues" title="Link to this heading">#</a></h1>
+<p>This section provides a comprehensive guide on how to manage <em>issues</em> within <strong>GitHub Projects</strong>. You will learn how to create new issues, organize them, customize views, reference issues, add comments, create task lists, and much more.</p>
+<p>In particular, in this guide you will first learn how to create and sort issues and then we will explore the functionalities of the project board, that is where your journal will live with the help of TaskTide.</p>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#creating-a-new-issue" id="id2">Creating a New Issue</a></p></li>
+<li><p><a class="reference internal" href="#generating-different-sorting-fields" id="id3">Generating Different Sorting Fields</a></p></li>
+<li><p><a class="reference internal" href="#building-new-views-using-github-project-boards" id="id4">Building New Views (Using GitHub Project Boards)</a></p></li>
+<li><p><a class="reference internal" href="#referencing-an-issue-in-another-issue" id="id5">Referencing an Issue in Another Issue</a></p></li>
+<li><p><a class="reference internal" href="#moving-issues-in-the-project" id="id6">Moving Issues in the Project</a></p></li>
+<li><p><a class="reference internal" href="#adding-and-editing-comments" id="id7">Adding and Editing Comments</a></p></li>
+<li><p><a class="reference internal" href="#creating-task-lists" id="id8">Creating Task Lists</a></p></li>
+<li><p><a class="reference internal" href="#marking-an-issue-as-completed" id="id9">Marking an Issue as Completed</a></p></li>
+<li><p><a class="reference internal" href="#setting-start-and-due-dates-using-milestones" id="id10">Setting Start and Due Dates (Using Milestones)</a></p></li>
+<li><p><a class="reference internal" href="#best-practices" id="id11">Best Practices</a></p></li>
+</ul>
+</nav>
+<section id="creating-a-new-issue">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Creating a New Issue</a><a class="headerlink" href="#creating-a-new-issue" title="Link to this heading">#</a></h2>
+<p>An issue is a work item that needs to be tracked and managed. To create a new issue in <strong>GitHub</strong> and assign it to a project, follow these detailed steps:</p>
+<p><strong>Method 1: Creating an Issue from the Repository and Assigning It to a Project</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Navigate to Your Repository</strong>:</p>
+<ul class="simple">
+<li><p>Open your web browser and go to <cite>https://github.com</cite>.</p></li>
+<li><p>Log in to your GitHub account if you haven’t already.</p></li>
+<li><p>Navigate to the repository where you want to create the issue.</p></li>
+</ul>
+</li>
+<li><p><strong>Access the Issues Tab</strong>:</p>
+<ul class="simple">
+<li><p>Once in your repository, locate the menu bar near the top.</p></li>
+<li><p>Click on the <strong>Issues</strong> tab (it’s between <strong>Pull requests</strong> and <strong>Actions</strong>).</p></li>
+</ul>
+</li>
+<li><p><strong>Click on ‘New Issue’</strong>:</p>
+<ul class="simple">
+<li><p>On the Issues page, find and click the green <strong>New issue</strong> button on the right side.</p></li>
+</ul>
+</li>
+<li><p><strong>Fill in the Issue Title and Description</strong>:</p>
+<ul class="simple">
+<li><p><strong>Title</strong>: Enter a concise and descriptive title for your issue in the text box provided.</p></li>
+<li><p><strong>Comment</strong>: In the larger text area below, provide a detailed description of the issue. Include any relevant information, screenshots, or code snippets.</p></li>
+</ul>
+</li>
+<li><p><strong>Assign Labels (Optional)</strong>:</p>
+<ul class="simple">
+<li><p>On the right sidebar, under <strong>Labels</strong>, click on <strong>Labels</strong>.</p></li>
+<li><p>Select appropriate labels to categorize your issue (e.g., bug, enhancement, question).</p></li>
+</ul>
+</li>
+<li><p><strong>Assign the Issue (Optional)</strong>:</p>
+<ul class="simple">
+<li><p>Under <strong>Assignees</strong>, click on <strong>Assign yourself</strong> or select a team member responsible for handling the issue.</p></li>
+</ul>
+</li>
+<li><p><strong>Add the Issue to a Project (Optional)</strong>:</p>
+<ul class="simple">
+<li><p>Under the right sidebar, find the <strong>Projects</strong> section.</p></li>
+<li><p>Click on <strong>Projects</strong>.</p></li>
+<li><p>A dropdown menu will appear. Select the project you want to add the issue to.</p></li>
+<li><p>If your project uses automation, the issue will be placed in the appropriate column based on its status.</p></li>
+</ul>
+</li>
+<li><p><strong>Set Milestones (Optional)</strong>:</p>
+<ul class="simple">
+<li><p>Under <strong>Milestone</strong>, select a milestone if applicable.</p></li>
+</ul>
+</li>
+<li><p><strong>Submit the Issue</strong>:</p>
+<ul class="simple">
+<li><p>Review all the information you’ve entered.</p></li>
+<li><p>Click on the green <strong>Submit new issue</strong> button at the bottom to create the issue.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Method 2: Creating an Issue Directly from a Project</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Navigate to Your Project</strong>:</p>
+<ul class="simple">
+<li><p>Go to the <strong>Projects</strong> tab in your repository or organization.</p></li>
+<li><p>Click on the project where you want to create the issue.</p></li>
+</ul>
+</li>
+<li><p><strong>Add a New Issue from the Project Board</strong>:</p>
+<ul class="simple">
+<li><p>In the project board, locate the column where you want to add the new issue (e.g., <strong>To do</strong>, <strong>Backlog</strong>).</p></li>
+<li><p>At the bottom of the column section, click on the <strong>+</strong> icon or <strong>Add item</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Fill in the Issue Details</strong>:</p>
+<ul class="simple">
+<li><p><strong>Title</strong>: Provide a concise and descriptive title.</p></li>
+<li><p><strong>Description</strong>: Add details about the issue.</p></li>
+<li><p><strong>Assignees, Labels, and Milestone</strong>: (Optional) Assign team members, labels, or milestones as needed.</p></li>
+</ul>
+</li>
+<li><p><strong>Submit the Issue</strong>:</p>
+<ul class="simple">
+<li><p>Click on <strong>Create</strong> or <strong>Submit new issue</strong>.</p></li>
+<li><p>The issue will automatically be added to the project and appear in the selected column.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="generating-different-sorting-fields">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Generating Different Sorting Fields</a><a class="headerlink" href="#generating-different-sorting-fields" title="Link to this heading">#</a></h2>
+<p>Organizing issues effectively is crucial for project management. <strong>GitHub</strong> allows you to sort and filter issues based on various criteria.</p>
+<p><strong>To sort and filter issues:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Access the Issues List</strong>:</p>
+<ul class="simple">
+<li><p>Go to the <strong>Issues</strong> tab of your repository.</p></li>
+</ul>
+</li>
+<li><p><strong>Use the Search and Filter Bar</strong>:</p>
+<ul class="simple">
+<li><p>At the top of the Issues page, you’ll find a search bar with a dropdown labeled <strong>Filters</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Apply Predefined Filters</strong>:</p>
+<ul class="simple">
+<li><p>Click on <strong>Filters</strong> to select common filters like <strong>Open issues</strong>, <strong>Your issues</strong>, or <strong>Everything assigned to you</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Sort Issues</strong>:</p>
+<ul class="simple">
+<li><p>Click on the <strong>Sort</strong> dropdown on the right side.</p></li>
+<li><p>Choose how you want to sort the issues:
+- Newest
+- Oldest
+- Most commented
+- Least commented
+- Recently updated
+- Least recently updated</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="building-new-views-using-github-project-boards">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Building New Views (Using GitHub Project Boards)</a><a class="headerlink" href="#building-new-views-using-github-project-boards" title="Link to this heading">#</a></h2>
+<p>Customized views help you focus on specific subsets of issues. In GitHub, you can use <strong>Project Boards</strong> to create custom views.</p>
+<p><strong>To create a new project board and add issues:</strong></p>
+<ol class="arabic">
+<li><p><strong>Navigate to the Projects Tab</strong>:</p>
+<ul class="simple">
+<li><p>In your repository, click on the <strong>Projects</strong> tab.</p></li>
+</ul>
+</li>
+<li><p><strong>Create a New Project</strong>:</p>
+<ul>
+<li><p>Click on <strong>New project</strong>.</p></li>
+<li><p>Choose between <strong>Table</strong>, <strong>Board</strong>, or <strong>Timeline</strong> view. For this example, select <strong>Board</strong>.</p></li>
+<li><p>Enter a project <strong>Name</strong> and optional <strong>Description</strong>.</p></li>
+<li><p>Click on <strong>Create project</strong>.</p>
+<blockquote>
+<div><img alt="_images/new_project.png" class="align-center" src="_images/new_project.png" />
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Add Issues to the Project Board</strong>:</p>
+<ul>
+<li><p>Inside your new project, click on <strong>Add item</strong> on the column base.</p></li>
+<li><p>A panel will appear where you can search for issues and pull requests.</p></li>
+<li><p>Drag and drop issues into columns like <strong>To do</strong>, <strong>In progress</strong>, or <strong>Done</strong>.</p>
+<blockquote>
+<div><img alt="_images/create_issue.png" class="align-center" src="_images/create_issue.png" />
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Customize Columns and Fields</strong>:</p>
+<ul>
+<li><p>Add new columns by clicking <strong>Add column</strong>.</p></li>
+<li><p>Rename columns by clicking on the column title.</p></li>
+<li><p>Customize fields by adding labels, assignees, or other metadata.</p></li>
+<li><p>You can add more customizations by clicking on the three dots on the top-right corner of the board and going into the settings.</p>
+<blockquote>
+<div><img alt="_images/example_proj.png" class="align-center" src="_images/example_proj.png" />
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Create new views</strong>:</p>
+<ul>
+<li><p>Add a new view by clicking on <strong>Add view</strong>.</p></li>
+<li><p>Select the type of view you want to create (e.g., <strong>Table</strong>, <strong>Board</strong>, <strong>Timeline</strong>).</p></li>
+<li><p>Customize the view by adding columns, filters, and other settings.</p>
+<blockquote>
+<div><img alt="_images/priority.png" class="align-center" src="_images/priority.png" />
+<img alt="_images/roadmap.png" class="align-center" src="_images/roadmap.png" />
+<img alt="_images/table.png" class="align-center" src="_images/table.png" />
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="referencing-an-issue-in-another-issue">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Referencing an Issue in Another Issue</a><a class="headerlink" href="#referencing-an-issue-in-another-issue" title="Link to this heading">#</a></h2>
+<p>Sometimes, you need to refer to one issue within another to show relationships or dependencies.</p>
+<p><strong>To reference an issue:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Use the Issue Number with ‘#’</strong>:</p>
+<ul class="simple">
+<li><p>In the description or a comment, type <cite>#</cite> followed by the issue number.</p></li>
+<li><p>GitHub will auto-complete and link the issue.</p></li>
+<li><p>Example: <cite>See issue #42 for related information.</cite></p></li>
+</ul>
+</li>
+<li><p><strong>Mention in Comments or Commits (for codes)</strong>:</p>
+<ul class="simple">
+<li><p>When committing code or commenting, you can reference issues the same way.</p></li>
+<li><p>If you use keywords like <cite>Fixes</cite>, <cite>Closes</cite>, or <cite>Resolves</cite> followed by <cite>#issue_number</cite>, the issue will be closed automatically when the code is merged.</p></li>
+<li><p>Example: <cite>Fixes #42</cite></p></li>
+</ul>
+</li>
+</ol>
+<img alt="_images/collected_actions.png" class="align-center" src="_images/collected_actions.png" />
+</section>
+<section id="moving-issues-in-the-project">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Moving Issues in the Project</a><a class="headerlink" href="#moving-issues-in-the-project" title="Link to this heading">#</a></h2>
+<p>Updating the status of issues helps keep the project on track.</p>
+<p><strong>To move an issue in a project board:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Access Your Project Board</strong>:</p>
+<ul class="simple">
+<li><p>Navigate to the <strong>Projects</strong> tab and select your project.</p></li>
+</ul>
+</li>
+<li><p><strong>Drag and Drop the Issue</strong>:</p>
+<ul class="simple">
+<li><p>Find the issue you want to move.</p></li>
+<li><p>Click and hold the issue card.</p></li>
+<li><p>Drag it to the appropriate column representing its new status (e.g., from <strong>To do</strong> to <strong>In progress</strong>).</p></li>
+</ul>
+</li>
+<li><p><strong>Automatic Saving</strong>:</p>
+<ul class="simple">
+<li><p>The change is saved automatically, and the issue’s status is updated accordingly.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="adding-and-editing-comments">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Adding and Editing Comments</a><a class="headerlink" href="#adding-and-editing-comments" title="Link to this heading">#</a></h2>
+<p>Communication is key in collaborative projects and we can use this functionality to build up the journal.</p>
+<p><strong>To add a comment:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Open the Issue</strong>:</p>
+<ul class="simple">
+<li><p>Click on the issue you want to comment on from the Issues list.</p></li>
+</ul>
+</li>
+<li><p><strong>Scroll to the Comment Field</strong>:</p>
+<ul class="simple">
+<li><p>At the bottom of the issue page, you’ll find the <strong>Leave a comment</strong> text box.</p></li>
+</ul>
+</li>
+<li><p><strong>Enter Your Comment</strong>:</p>
+<ul class="simple">
+<li><p>Type your message.</p></li>
+<li><p>You can use <strong>Markdown</strong> for formatting, including bold text, lists, and code blocks.</p></li>
+</ul>
+</li>
+<li><p><strong>Submit the Comment</strong>:</p>
+<ul class="simple">
+<li><p>Click on the <strong>Comment</strong> button below the text box.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>To edit a comment:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Locate Your Comment</strong>:</p>
+<ul class="simple">
+<li><p>Find the comment you want to edit. You can only edit your own comments.</p></li>
+</ul>
+</li>
+<li><p><strong>Click on the ‘…’ Menu</strong>:</p>
+<ul class="simple">
+<li><p>On the top-right corner of your comment, click the three dots (<strong>…</strong>).</p></li>
+</ul>
+</li>
+<li><p><strong>Select ‘Edit’</strong>:</p>
+<ul class="simple">
+<li><p>Click on <strong>Edit</strong> from the dropdown menu.</p></li>
+</ul>
+</li>
+<li><p><strong>Make Changes and Save</strong>:</p>
+<ul class="simple">
+<li><p>Update your comment as needed.</p></li>
+<li><p>Click <strong>Update comment</strong> to save changes.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="creating-task-lists">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Creating Task Lists</a><a class="headerlink" href="#creating-task-lists" title="Link to this heading">#</a></h2>
+<p>Task lists within an issue help break down work into manageable pieces.</p>
+<p><strong>To create a task list:</strong></p>
+<ol class="arabic">
+<li><p><strong>Edit the Issue Description or Add a Comment</strong>:</p>
+<ul class="simple">
+<li><p>Open the issue and click on <strong>Edit</strong> next to the description, or scroll down to the <strong>Leave a comment</strong> section.</p></li>
+</ul>
+</li>
+<li><p><strong>Use the Markdown Syntax for Task Lists</strong>:</p>
+<ul>
+<li><p>Type out your tasks using the following syntax:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">- [ ]</span> First task
+<span class="k">- [ ]</span> Second task
+<span class="k">- [ ]</span> Third task
+</pre></div>
+</div>
+</li>
+<li><p>The <cite>- [ ]</cite> indicates an unchecked task.</p></li>
+</ul>
+</li>
+<li><p><strong>Save Your Changes</strong>:</p>
+<ul class="simple">
+<li><p>If editing the description, click <strong>Save</strong>.</p></li>
+<li><p>If adding a comment, click <strong>Comment</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Interact with the Task List</strong>:</p>
+<ul class="simple">
+<li><p>You can click on the checkboxes to mark tasks as completed.</p></li>
+<li><p>Completed tasks will show as <cite>- [x] Task</cite>.</p></li>
+</ul>
+<img alt="_images/action_list.png" class="align-center" src="_images/action_list.png" />
+</li>
+</ol>
+</section>
+<section id="marking-an-issue-as-completed">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Marking an Issue as Completed</a><a class="headerlink" href="#marking-an-issue-as-completed" title="Link to this heading">#</a></h2>
+<p>Closing issues indicates that the work item has been resolved.</p>
+<p><strong>To mark an issue as completed:</strong></p>
+<ol class="arabic">
+<li><p><strong>Open the Issue</strong>:</p>
+<ul class="simple">
+<li><p>Navigate to the issue you want to close.</p></li>
+</ul>
+</li>
+<li><p><strong>Click on ‘Close issue’</strong>:</p>
+<ul>
+<li><p>Scroll to the bottom of the issue page.</p></li>
+<li><p>Click the gray <strong>Close issue</strong> button.</p>
+<blockquote>
+<div><img alt="_images/closing_issue.png" class="align-center" src="_images/closing_issue.png" />
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Confirm Closure</strong>:</p>
+<ul class="simple">
+<li><p>The issue will now be marked as <strong>Closed</strong>, and a red <strong>Closed</strong> label will appear at the top of the issue.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Reopening an Issue (If Necessary):</strong></p>
+<ul>
+<li><p>If you need to reopen a closed issue, click the <strong>Reopen issue</strong> button that replaces the <strong>Close issue</strong> button.</p>
+<blockquote>
+<div><img alt="_images/closed_issue.png" class="align-center" src="_images/closed_issue.png" />
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="setting-start-and-due-dates-using-milestones">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Setting Start and Due Dates (Using Milestones)</a><a class="headerlink" href="#setting-start-and-due-dates-using-milestones" title="Link to this heading">#</a></h2>
+<p>Setting dates helps in scheduling and tracking progress. GitHub uses <strong>Milestones</strong> to group issues with due dates.</p>
+<p><strong>To set start and due dates using milestones:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Create a Milestone</strong>:</p>
+<ul class="simple">
+<li><p>Go to the <strong>Issues</strong> tab.</p></li>
+<li><p>Click on <strong>Milestones</strong> (next to <strong>Labels</strong>).</p></li>
+<li><p>Click <strong>New milestone</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Enter Milestone Details</strong>:</p>
+<ul class="simple">
+<li><p><strong>Title</strong>: Provide a name for the milestone.</p></li>
+<li><p><strong>Description</strong>: (Optional) Add details about the milestone.</p></li>
+<li><p><strong>Due date</strong>: Select a due date from the date picker.</p></li>
+</ul>
+</li>
+<li><p><strong>Save the Milestone</strong>:</p>
+<ul class="simple">
+<li><p>Click <strong>Create milestone</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Assign Issues to the Milestone</strong>:</p>
+<ul class="simple">
+<li><p>Go back to the <strong>Issues</strong> tab.</p></li>
+<li><p>Open an issue you want to assign.</p></li>
+<li><p>On the right sidebar under <strong>Milestone</strong>, click and select the milestone you just created.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="best-practices">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Best Practices</a><a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Write Clear Descriptions</strong>:</p>
+<ul>
+<li><p>Provide detailed information to help team members understand the issue without additional explanations.</p></li>
+<li><p>Include steps to reproduce bugs, expected vs. actual behavior, and any relevant logs or screenshots.</p></li>
+</ul>
+</li>
+<li><p><strong>Use Consistent Labeling</strong>:</p>
+<ul>
+<li><p>Stick to a predefined set of labels to keep issues organized.</p></li>
+<li><p>Regularly review and clean up labels to avoid clutter.</p></li>
+</ul>
+</li>
+<li><p><strong>Update Issues Regularly</strong>:</p>
+<ul>
+<li><p>Keep the status, assignee, and other fields up to date to reflect the current state of the issue.</p></li>
+<li><p>Comment on issues with updates or questions to keep communication transparent.</p></li>
+</ul>
+</li>
+<li><p><strong>Break Down Complex Tasks</strong>:</p>
+<ul>
+<li><p>Use task lists to divide large issues into smaller, manageable tasks.</p></li>
+<li><p>Consider creating separate issues for substantial tasks and link them together.</p></li>
+</ul>
+</li>
+<li><p><strong>Review and Prioritize</strong>:</p>
+<ul>
+<li><p>Regularly review the list of open issues and prioritize them according to project needs.</p></li>
+<li><p>Use milestones and project boards to manage priorities and deadlines.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-issue">Creating a New Issue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-different-sorting-fields">Generating Different Sorting Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-new-views-using-github-project-boards">Building New Views (Using GitHub Project Boards)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencing-an-issue-in-another-issue">Referencing an Issue in Another Issue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-issues-in-the-project">Moving Issues in the Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-and-editing-comments">Adding and Editing Comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-task-lists">Creating Task Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marking-an-issue-as-completed">Marking an Issue as Completed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-start-and-due-dates-using-milestones">Setting Start and Due Dates (Using Milestones)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Lorenzo Mugnai.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
