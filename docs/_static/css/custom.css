@@ -1,0 +1,164 @@
+/*******************************************************************************
+* light theme
+*
+* all the variables used for light theme coloring
+*/
+html[data-theme="light"] :root {
+  /*****************************************************************************
+  * main colors
+  */
+  --pxd-color-primary: rgb(83, 185, 178); /* Verde acqua scuro */
+  --pxd-color-secondary: rgb(50, 161, 246); /* Blu chiaro */
+  --pxd-color-success: rgb(98, 207, 200); /* Verde acqua chiaro */
+  --pxd-color-info: var(--pxd-color-primary);
+  --pxd-color-warning: var(--pxd-color-secondary);
+  --pxd-color-danger: rgb(255, 82, 82); /* Rosso */
+  --pxd-color-text-base: rgb(0, 0, 0); /* Testo base nero */
+  --pxd-color-text-muted: rgb(77, 77, 77); /* Testo sfumato */
+  --pxd-color-border: rgb(201, 201, 201); /* Confine */
+  --pxd-color-shadow: rgb(216, 216, 216); /* Ombra */
+
+  /*****************************************************************************
+  * layout
+  */
+
+  /* links and highlights 
+  */
+  
+  
+  --pxd-color-link: var(--pxd-color-primary);
+  --pxd-color-link-hover: rgb(50, 161, 246); /* Colore hover blu chiaro */
+  --pxd-color-link-active: var(--pxd-color-primary);
+  --pxd-color-highlight-hover: rgb(50, 161, 246); /* Colore hover per highlights */
+
+  /* buttons */
+  --pxd-color-button-background: var(--pxd-color-primary);
+  --pxd-color-button-hover: rgb(50, 161, 246); /* Colore hover per pulsanti */
+  --pxd-color-button-text: rgb(255, 255, 255); /* Testo pulsante */
+
+  /* inline code */
+  --pxd-color-inline-code: rgb(50, 161, 246); /* Blu chiaro */
+  --pxd-color-target: rgb(53, 119, 91); /* Verde scuro */
+  --pxd-color-note-highlight: var(--pxd-color-secondary);
+  --pxd-color-title: var(--pxd-color-primary);
+
+  .only-dark {
+    display: none !important;
+  }
+
+  img {
+    background: transparent !important;
+  }
+}
+
+/*******************************************************************************
+* dark theme
+*
+* all the variables used for dark theme coloring
+*/
+html[data-theme="dark"] :root {
+  /*****************************************************************************
+  * main colors
+  */
+  --pxd-color-primary: rgb(83, 185, 178); /* Verde acqua scuro */
+  --pxd-color-secondary: rgb(50, 161, 246); /* Blu chiaro */
+  --pxd-color-success: rgb(98, 207, 200); /* Verde acqua chiaro */
+  --pxd-color-info: var(--pxd-color-primary);
+  --pxd-color-warning: var(--pxd-color-secondary);
+  --pxd-color-danger: rgb(255, 82, 82); /* Rosso */
+  --pxd-color-text-base: rgb(224, 224, 224); /* Testo base chiaro */
+  --pxd-color-text-muted: rgb(150, 150, 150); /* Testo sfumato chiaro */
+  --pxd-color-border: rgb(150, 150, 150); /* Confine chiaro */
+  --pxd-color-shadow: rgb(30, 30, 30); /* Ombra scura */
+
+  /*****************************************************************************
+  * layout
+  */
+
+  /* links and highlights */
+  --pxd-color-link: var(--pxd-color-primary);
+  --pxd-color-link-hover: rgb(50, 161, 246); /* Colore hover blu chiaro */
+  --pxd-color-link-active: var(--pxd-color-primary);
+  --pxd-color-highlight-hover: rgb(50, 161, 246); /* Colore hover per highlights */
+
+  /* buttons */
+  --pxd-color-button-background: var(--pxd-color-primary);
+  --pxd-color-button-hover: rgb(50, 161, 246); /* Colore hover per pulsanti */
+  --pxd-color-button-text: rgb(255, 255, 255); /* Testo pulsante */
+
+  /* inline code */
+  --pxd-color-inline-code: rgb(50, 161, 246); /* Blu chiaro */
+  --pxd-color-target: rgb(53, 119, 91); /* Verde scuro */
+  --pxd-color-note-highlight: var(--pxd-color-secondary);
+  --pxd-color-title: var(--pxd-color-primary);
+
+  .only-light {
+    display: none !important;
+  }
+
+  img {
+    background: transparent !important;
+    filter: brightness(0.9) contrast(1.1);
+  }
+}
+
+body img {
+  background: transparent !important;
+}
+
+html, body {
+  font-family: 'Comfortaa', sans-serif;
+}
+
+/* Colore hover per i link e i pulsanti */
+a:hover, a:focus, .navbar a:hover, .navbar a:focus, button:hover, button:focus {
+  color: rgb(50, 161, 246) !important; /* Azzurro chiaro */
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: rgb(50, 161, 246) !important;
+  border-color: rgb(50, 161, 246) !important;
+}
+
+/* Colore hover per i titoli con # */
+h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, 
+h4:hover > a.headerlink, h5:hover > a.headerlink, h6:hover > a.headerlink {
+  color: rgb(50, 161, 246) !important; /* Azzurro chiaro */
+}
+
+/* Colore per il pulsante "Back to home" */
+a.navbar-brand, .navbar-brand:hover, .navbar-brand:focus {
+  color: rgb(83, 185, 178) !important; /* Verde acqua scuro */
+}
+
+/* Pulsanti di navigazione in hover */
+button.navbar-toggler:hover, button.navbar-toggler:focus {
+  background-color: rgb(50, 161, 246) !important; /* Azzurro chiaro */
+  border-color: rgb(50, 161, 246) !important;
+}
+
+/* Force all images to fit within the same frame */
+.carousel-item {
+  height: 500px; /* Adjust to match the height of the largest image */
+  object-fit: cover; /* Ensures images fill the frame while maintaining aspect ratio */
+}
+
+/* Style navigation dots */
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #333; /* Dark dots */
+}
+
+.carousel-indicators .active {
+  background-color: #007bff; /* Highlight active dot (blue) */
+}
+
+/* Style navigation arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background for better visibility */
+  border-radius: 50%;
+  padding: 10px;
+}
