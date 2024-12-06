@@ -27,7 +27,7 @@ TaskTide can be utilized by anyone looking to track and manage diverse projects.
 
 Additional useful features will be added in future updates.
 
-To tailor the experience, users simply need to create their own project within GitHub, adapting the issue visualization to suit their specific needs and objectives. An example is provided [here](https://github.com/users/LorenzoMugnai/projects/3/views/1).
+To tailor the experience, users simply need to create their own project within GitHub, adapting the issue visualization to suit their specific needs and objectives. An example is provided [here](https://github.com/users/mug-n-ai/projects/1/views/1).
 
 TaskTide empowers individuals and teams alike to maintain organized, efficient workflows.
 
@@ -119,7 +119,7 @@ SOURCE_REPOS: owner/repo1,owner/repo2
 
 Your repository is now set up to host your TaskTide project!
 
-For detailed steps, refer to the [complete documentation](https://lorenzomugnai.github.io/TaskTide/getting_started.html#getting-started).
+For detailed steps, refer to the [complete documentation](https://mug-n-ai.github.io/TaskTide-documentation/getting_started.html#getting-started).
 
 
 ## Supported Functionalities

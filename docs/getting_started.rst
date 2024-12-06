@@ -31,7 +31,7 @@ Prepare Your Project
 
 TaskTide is designed to function within a GitHub project, so the next step is to create one. You can either create the project directly within your new private repository or set it up first and then connect it to the repository.
 
-You can use our `template <https://github.com/users/LorenzoMugnai/projects/3/views/1>`_ or create a blank project. This is where you can tailor your project to suit your specific needs. Don't worry too much; you'll quickly discover the customizations that work best for you since every user's journal will be unique.
+You can use our `template <https://github.com/users/mug-n-ai/projects/1/views/1>`_ or create a blank project. This is where you can tailor your project to suit your specific needs. Don't worry too much; you'll quickly discover the customizations that work best for you since every user's journal will be unique.
 
 Next, you'll want to create your first issue. Issues serve as the building blocks of your journal. They can be used like threads, meaning you'll want to create an issue for each "topic." This way, you can continue to expand each issue over time with comments and actions. A complete guide to manage issues and project is in :ref:`managing_issues`
 

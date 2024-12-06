@@ -26,7 +26,7 @@ Welcome to TaskTide
 
 .. important::
 
-   TaskTide is still under development and may not be fully functional. Please refer to the `GitHub repository <https://github.com/LorenzoMugnai/TaskTide>`_ for the latest updates and releases.
+   TaskTide is still under development and may not be fully functional. Please refer to the `GitHub repository <https://github.com/mug-n-ai/TaskTide>`_ for the latest updates and releases.
 
 Key Features of TaskTide
 ------------------------
