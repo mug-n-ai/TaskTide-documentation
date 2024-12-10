@@ -60,7 +60,7 @@ TaskTide is a system based on GitHub Actions and automated through a combination
 
 > [!IMPORTANT]
 > TaskTide is available only for GitHub Supporters. Find more information about GitHub Sponsors [here](https://docs.github.com/en/sponsors).
-> To use TaskTide, please consider supporting the project by becoming a GitHub Sponsor: see [here]()
+> To use TaskTide, please consider supporting the project by becoming a GitHub Sponsor: see [here](https://github.com/sponsors/LorenzoMugnai)
 
 ## Managing Issues with Projects (and Projects with Issues)
 

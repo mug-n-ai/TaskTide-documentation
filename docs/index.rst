@@ -26,6 +26,11 @@ Welcome to TaskTide
 
 .. important::
 
+   TaskTide is available only for GitHub Supporters. Find more information about `GitHub Sponsors <https://docs.github.com/en/sponsors>`_.
+   To use TaskTide, please consider supporting the project by `becoming a GitHub Sponsor <https://github.com/sponsors/LorenzoMugnai>`_.
+
+.. note::
+
    TaskTide is still under development and may not be fully functional. Please refer to the `GitHub repository <https://github.com/mug-n-ai/TaskTide>`_ for the latest updates and releases.
 
 Key Features of TaskTide
