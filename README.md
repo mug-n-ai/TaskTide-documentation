@@ -2,8 +2,9 @@
 
 <img src="contents/tasktide.png" alt="icon" width="300" height="300">
 
-![Version](https://img.shields.io/badge/version-1.2.8-blue)
+![Version](https://img.shields.io/badge/version-1.2.9-blue)
 [![Collect Actions on Issue Events](https://github.com/LorenzoMugnai/journal/actions/workflows/collect_actions.yml/badge.svg)](https://github.com/LorenzoMugnai/journal/actions/workflows/collect_actions.yml)
+[![Sync checked Actions](https://github.com/LorenzoMugnai/MyTaskTide/actions/workflows/sync_checked_actions.yml/badge.svg)](https://github.com/LorenzoMugnai/MyTaskTide/actions/workflows/sync_checked_actions.yml)
 [![Sync Assigned Issues from Other Repositories](https://github.com/LorenzoMugnai/journal/actions/workflows/sync_issues.yml/badge.svg)](https://github.com/LorenzoMugnai/journal/actions/workflows/sync_issues.yml)
 [![Update Changelog](https://github.com/LorenzoMugnai/MyTaskTide/actions/workflows/changelog.yml/badge.svg)](https://github.com/LorenzoMugnai/MyTaskTide/actions/workflows/changelog.yml)
 [![Collect Events from Issues](https://github.com/LorenzoMugnai/MyTaskTide/actions/workflows/events_collector.yml/badge.svg)](https://github.com/LorenzoMugnai/MyTaskTide/actions/workflows/events_collector.yml)
@@ -174,6 +175,8 @@ This repository includes a script designed to automatically collect actionable i
 - **Fetching Issues**: The script retrieves all open issues from the specified repository using the GitHub API, checking each issue to gather actionable items.
 
 - **Extracting Actionable Items**: Action items are identified by searching for lines containing the keyword `[action]`, excluding completed items (marked with `[x]`).
+
+- **Synchronising Checked Actions**: The script also synchronises updates. If an action is marked as completed ([x]) in the action issue, the corresponding item in the original issue or comment is updated to reflect this change.
 
 - **Linking to Original Comments**: Each action item includes a clickable link directing users to the specific comment within the original issue, providing context.
 

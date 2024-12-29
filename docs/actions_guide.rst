@@ -56,6 +56,7 @@ That will now reads:
     -----------
     - [ ] [action] Schedule a team meeting
 
+This synchronization also works in reverse: marking an item as completed in the `Open Actions` issue will automatically update the original issue or comment.
 
 .. note::
     The Synchronization is not real-time. The action running time is average 1 minute, so it can take up to 1 minute to see the changes in the collecting issue.
@@ -72,12 +73,6 @@ and the collected actions in the `Open Actions` issue:
 
 
 This workflow runs automatically on every issue event (like creating a new issue or a comment) and is also scheduled to execute every Sunday at midnight.
-
-
-.. warning:: 
-    The `Open Actions` issue only displays a copy of the completed actions. To remove actions from this list, they must be marked as closed in the original thread. Therefore, it's crucial to manage your original issues effectively to ensure that the `Open Actions` issue remains accurate and up-to-date.
-
-This workflow runs automatically on every issue event and is also scheduled to execute every Sunday at midnight.
 
 Automatic changelog
 ------------------------------------------------
