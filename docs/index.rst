@@ -24,10 +24,9 @@ Welcome to TaskTide
    :local:
    :depth: 1
 
-.. important::
 
-   TaskTide is available only for GitHub Supporters. Find more information about `GitHub Sponsors <https://docs.github.com/en/sponsors>`_.
-   To use TaskTide, please consider supporting the project by `becoming a GitHub Sponsor <https://github.com/sponsors/LorenzoMugnai>`_.
+..    TaskTide is available only for GitHub Supporters. Find more information about `GitHub Sponsors <https://docs.github.com/en/sponsors>`_.
+..    To use TaskTide, please consider supporting the project by `becoming a GitHub Sponsor <https://github.com/sponsors/LorenzoMugnai>`_.
 
 .. note::
 
